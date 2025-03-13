@@ -1,0 +1,29 @@
+<div class="container mt-5 p-4 shadow rounded bg-light">
+  <!-- Título y Botón -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="text-center text-uppercase fw-bold text-primary">Lista de Vehículos</h3>
+    <!-- Botón Nuevo Vehículo -->
+    <a href="/vehiculos/create" mat-button routerLinkActive="active" class="btn btn-success d-flex align-items-center">
+      <span class="material-icons me-1">add_circle</span> Nuevo Vehículo
+    </a>
+  </div>
+
+  <!-- Tabla de Vehículos -->
+  <div class="table-responsive">
+    <table class="table table-hover table-bordered table-striped align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Placa</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Conductor</th>
+          <th scope="col">Propietario</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <!-- Las filas se generarán dinámicamente aquí -->
+      </tbody>
+    </table>
+  </div>
+</div>

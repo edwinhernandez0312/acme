@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+   
+    <h3 class="text-center text-uppercase fw-bold text-primary">Lista de propietarios</h3>
+    <!-- Botón de Nuevo Propietario -->
+    <a href="/propietarios/create" mat-button routerLinkActive="active" class="btn btn-success d-flex align-items-center">
+      <span class="material-icons me-1">add_circle</span> Nuevo Propietario
+  </a>
+  </div>
+  
+  <div class="table-responsive">
+    <table class="table table-hover table-bordered table-striped align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Cédula</th>
+          <th scope="col">Primer Nombre</th>
+          <th scope="col">Segundo Nombre</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Dirección</th>
+          <th scope="col">Teléfono</th>
+          <th scope="col">Ciudad</th>
+          <th scope="col">Acciones</th> 
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <!-- Los datos se insertarán aquí dinámicamente -->
+      </tbody>
+    </table>
+  </div>
+</div>

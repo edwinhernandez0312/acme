@@ -1,0 +1,90 @@
+<div class="container mt-5">
+  <div class="card shadow-sm">
+    <div class="card-header text-center text-primary">
+      <h4>Editar Propietario</h4>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="updateOwner()" #editOwnerForm="ngForm">
+        <div class="mb-3">
+          <label for="cedula" class="form-label">Número de Cédula</label>
+          <input
+            id="cedula"
+            type="text"
+            class="form-control"
+            [(ngModel)]="ownerData.cedula"
+            name="cedula"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="primer_nombre" class="form-label">Primer Nombre</label>
+          <input
+            id="primer_nombre"
+            type="text"
+            class="form-control"
+            [(ngModel)]="ownerData.primer_nombre"
+            name="primer_nombre"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="segundo_nombre" class="form-label">Segundo Nombre</label>
+          <input
+            id="segundo_nombre"
+            type="text"
+            class="form-control"
+            [(ngModel)]="ownerData.segundo_nombre"
+            name="segundo_nombre"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="apellidos" class="form-label">Apellidos</label>
+          <input
+            id="apellidos"
+            type="text"
+            class="form-control"
+            [(ngModel)]="ownerData.apellidos"
+            name="apellidos"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="direccion" class="form-label">Dirección</label>
+          <input
+            id="direccion"
+            type="text"
+            class="form-control"
+            [(ngModel)]="ownerData.direccion"
+            name="direccion"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="telefono" class="form-label">Teléfono</label>
+          <input
+            id="telefono"
+            type="text"
+            class="form-control"
+            [(ngModel)]="ownerData.telefono"
+            name="telefono"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="ciudad" class="form-label">Ciudad</label>
+          <input
+            id="ciudad"
+            type="text"
+            class="form-control"
+            [(ngModel)]="ownerData.ciudad"
+            name="ciudad"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">
+          Guardar Cambios
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

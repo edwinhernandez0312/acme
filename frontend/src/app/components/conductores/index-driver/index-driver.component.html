@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <!-- Título y Botón -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="text-center text-uppercase fw-bold text-primary">Lista de Conductores</h3>
+    <!-- Botón Nuevo Conductor -->
+    <a href="/conductor/create" mat-button routerLinkActive="active" class="btn btn-success d-flex align-items-center">
+      <span class="material-icons me-1">add_circle</span> Nuevo Conductor
+    </a>
+  </div>
+
+  <!-- Tabla de Conductores -->
+  <div class="table-responsive">
+    <table class="table table-hover table-bordered table-striped align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Cédula</th>
+          <th scope="col">Primer Nombre</th>
+          <th scope="col">Segundo Nombre</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Dirección</th>
+          <th scope="col">Teléfono</th>
+          <th scope="col">Ciudad</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <!-- Los datos se insertarán aquí dinámicamente -->
+      </tbody>
+    </table>
+  </div>
+</div>

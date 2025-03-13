@@ -1,0 +1,93 @@
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card p-4 shadow-lg" style="max-width: 600px; width: 100%;">
+      <h3 class="text-center mb-4">Editar Vehículo</h3>
+      <form (ngSubmit)="onUpdateVehicle()">
+        <!-- Campo de Placa (Solo Lectura) -->
+        <div class="form-group">
+          <label for="placa">Placa</label>
+          <input
+            type="text"
+            id="placa"
+            class="form-control"
+            [(ngModel)]="vehicle.placa"
+            name="placa"
+            required
+          />
+        </div>
+  
+        <!-- Campo de Color -->
+        <div class="form-group mt-2">
+          <label for="color">Color</label>
+          <input
+            type="text"
+            id="color"
+            class="form-control"
+            [(ngModel)]="vehicle.color"
+            name="color"
+            required
+          />
+        </div>
+  
+        <!-- Campo de Marca -->
+        <div class="form-group mt-2">
+          <label for="marca">Marca</label>
+          <input
+            type="text"
+            id="marca"
+            class="form-control"
+            [(ngModel)]="vehicle.marca"
+            name="marca"
+            required
+          />
+        </div>
+  
+        <!-- Selección de Tipo -->
+        <div class="form-group mt-2">
+          <label for="tipo">Tipo de Vehículo</label>
+          <select
+            id="tipo"
+            class="form-control"
+            [(ngModel)]="vehicle.tipo"
+            name="tipo"
+            required
+          >
+            <option value="">Seleccione...</option>
+            <option value="Particular">Particular</option>
+            <option value="Público">Público</option>
+          </select>
+        </div>
+  
+        <!-- Selección de Conductor -->
+        <div class="form-group mt-2">
+            <label for="conductor-dropdown">Conductor</label>
+            <select
+              id="conductor-dropdown"
+              class="form-control"
+              [(ngModel)]="vehicle.cedula_conductor"
+              name="conductor_id"
+              required
+            >
+              <option value="">Seleccione un conductor</option>
+              <!-- Las opciones se llenarán dinámicamente -->
+            </select>
+          </div>
+    
+          <div class="form-group mt-2">
+            <label for="propietario-dropdown">Propietario</label>
+            <select
+              id="propietario-dropdown"
+              class="form-control"
+              [(ngModel)]="vehicle.cedula_propietario"
+              name="propietario_id"
+              required
+            >
+              <option value="">Seleccione un propietario</option>
+              <!-- Las opciones se llenarán dinámicamente -->
+            </select>
+          </div>
+  
+        <!-- Botón de Guardar -->
+        <button type="submit" class="btn btn-primary mt-4 w-100">Guardar Cambios</button>
+      </form>
+    </div>
+  </div>
