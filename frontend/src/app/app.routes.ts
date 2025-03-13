@@ -13,19 +13,39 @@ import { EditDriverComponent } from './components/conductores/edit-driver/edit-d
 import { EditVehicleComponent } from './components/vehiculos/edit-vehicle/edit-vehicle.component';
 
 export const routes: Routes = [
+  // Rutas públicas
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
-  // Rutas protegidas
-  { path: 'propietarios/create', component: RegisterOwnerComponent, canActivate: [AuthGuard] },
-  { path: 'propietarios/edit/:cedula', component: EditOwnerComponent, canActivate: [AuthGuard] },
-  { path: 'propietarios', component: ShowOwnerComponent, canActivate: [AuthGuard] },
-  { path: 'conductor/create', component: CreateDriverComponent, canActivate: [AuthGuard] },
-  { path: 'conductor/edit/:cedula', component: EditDriverComponent, canActivate: [AuthGuard] },
-  { path: 'conductores', component: IndexDriverComponent, canActivate: [AuthGuard] },
-  { path: 'vehiculos/create', component: VehicleComponent, canActivate: [AuthGuard] },
-  { path: 'vehiculos/edit/:placa', component: EditVehicleComponent, canActivate: [AuthGuard] },
-  { path: 'vehiculos', component: VehiclesViewComponent, canActivate: [AuthGuard] },
+  // Rutas protegidas para propietarios
+  {
+    path: 'propietarios',
+    children: [
+      { path: 'create', component: RegisterOwnerComponent, canActivate: [AuthGuard] },
+      { path: 'edit/:cedula', component: EditOwnerComponent, canActivate: [AuthGuard] },
+      { path: '', component: ShowOwnerComponent, canActivate: [AuthGuard] },
+    ],
+  },
+
+  // Rutas protegidas para conductores
+  {
+    path: 'conductor',
+    children: [
+      { path: 'create', component: CreateDriverComponent, canActivate: [AuthGuard] },
+      { path: 'edit/:cedula', component: EditDriverComponent, canActivate: [AuthGuard] },
+      { path: '', component: IndexDriverComponent, canActivate: [AuthGuard] },
+    ],
+  },
+
+  // Rutas protegidas para vehículos
+  {
+    path: 'vehiculos',
+    children: [
+      { path: 'create', component: VehicleComponent, canActivate: [AuthGuard] },
+      { path: 'edit/:placa', component: EditVehicleComponent, canActivate: [AuthGuard] },
+      { path: '', component: VehiclesViewComponent, canActivate: [AuthGuard] },
+    ],
+  },
 
   // Redirige cualquier ruta no existente al login
   { path: '**', redirectTo: 'login', pathMatch: 'full' },

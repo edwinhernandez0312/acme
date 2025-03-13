@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-show-vehicle',
   templateUrl: './vehicles-view.component.html',
-  styleUrls: ['./Vehicles-view.component.css']
+  styleUrls: ['./vehicles-view.component.css'],
 })
 export class VehiclesViewComponent implements OnInit {
   constructor(private http: HttpClient) {}
